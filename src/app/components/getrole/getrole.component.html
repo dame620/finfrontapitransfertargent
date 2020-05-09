@@ -1,21 +1,23 @@
-<button (click)="ongetRoles()">affiche role</button>
-<div class="table-title">
 
-</div>
-<table class="responstable">
-    <thead>
+<button type="button" class="btn btn-success" (click)="ongetRoles()">affichage role</button>
+<div class="container">
+    <h4>LISTE DES ROLES</h4>
+               
+    <table class="table table-dark">
+      <thead>
         <tr>
-            <th class="text-left">ID</th>
-            <th class="text-left">LIBELLE</th>
+          <th>ID</th>
+          <th>LIBELLE</th>
         </tr>
-    </thead>
-    <tbody class="table-hover">
+      </thead>
+      <tbody>
         <tr *ngFor="let role of roles">
 
-            <td class="text-left ">{{role.id}}</td>
-            <td class="text-left ">{{role.libelle}}</td>
+            <td>{{role.id}}</td>
+            <td>{{role.libelle}}</td>
         </tr>
-
-
     </tbody>
-</table>
+    </table>
+  </div>
+  
+  

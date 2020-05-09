@@ -1,35 +1,34 @@
 import { Component, OnInit } from '@angular/core';
-import { RoleService } from '../../services/role.service';
 import { AuthentificationService } from '../../services/authentification.service';
 
 @Component({
-  selector: 'app-getrole',
-  templateUrl: './getrole.component.html',
-  styleUrls: ['./getrole.component.scss']
+  selector: 'app-getuser',
+  templateUrl: './getuser.component.html',
+  styleUrls: ['./getuser.component.scss']
 })
-export class GetroleComponent implements OnInit {
-  roles;
+export class GetuserComponent implements OnInit {
+  users;
   constructor(private auth: AuthentificationService) { }
 
   ngOnInit() {
 
-    this.auth.getRoles().subscribe(
+    this.auth.getUsers().subscribe(
       data=>{
-        this.roles=data["hydra:member"]
+        this.users=data["hydra:member"]
         console.log(data["hydra:member"]
         )},
         error=>{
-          alert('Veuillez vous authentifiez');
+        
           console.log(error);
         }
     )
 
   }
 
-  ongetRoles(){
-    this.auth.getRoles().subscribe(
+  ongetListeusers(){
+    this.auth.getUsers().subscribe(
       data=>{
-        this.roles=data["hydra:member"]
+        this.users=data["hydra:member"]
         console.log(data["hydra:member"]
         )},
         error=>{
@@ -38,5 +37,8 @@ export class GetroleComponent implements OnInit {
         }
     )
 }
+
+
+
 
 }

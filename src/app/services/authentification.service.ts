@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Role } from '../models/role';
+import { Compte } from '../models/compte';
 @Injectable({
   providedIn: 'root'
 })
@@ -40,7 +41,34 @@ pipe(map(user => {
 
   }
 
+  postUser(user){
+   
+    return this.httpClient.post<User>(`${environment.apiUrl}/api/users`,user);
+  }
 
 
+  getUsers(){
+
+    return this.httpClient.get<User>(`${environment.apiUrl}/api/users`);
+
+  }
+
+
+  getCompte(){
+
+    return this.httpClient.get<Compte>(`${environment.apiUrl}/api/comptes`);
+
+  }
+
+  postCompte(compte){
+   
+    return this.httpClient.post<Compte>(`${environment.apiUrl}/api/comptes`,compte);
+  }
+
+  getNinea(ninea){
+    
+    return this.httpClient.get<Compte>(`${environment.apiUrl}/api/comptes?partenaire.ninea=${ninea}`);
+
+  }
 
 }

@@ -1,0 +1,25 @@
+
+<button type="button" class="btn btn-success" (click)="ongetListeusers()">affichage user</button>
+<div class="container">
+    <h4>LISTE DES USERS</h4>
+               
+    <table class="table table-dark">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>USERNAME</th>
+          <th>NOM</th>
+          <th>ROLE</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+
+            <td>{{user.id}}</td>
+            <td>{{user.username}}</td>
+            <td>{{user.nomcomplet}}</td>
+            <td>{{user.role.libelle}}</td>
+        </tr>
+    </tbody>
+    </table>
+  </div>

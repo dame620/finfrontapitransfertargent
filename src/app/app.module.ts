@@ -12,6 +12,17 @@ import { FormConnexionComponent } from './components/form-connexion/form-connexi
 import { GetroleComponent } from './components/getrole/getrole.component';
 import { AffichagegetroleComponent } from './pages/affichagegetrole/affichagegetrole.component';
 import { HomeComponent } from './pages/home/home.component';
+import { AdduserComponent } from './components/adduser/adduser.component';
+import { GetadduserComponent } from './pages/getadduser/getadduser.component';
+import { HomecompComponent } from './components/homecomp/homecomp.component';
+import { GetuserComponent } from './components/getuser/getuser.component';
+import { ShowgetuserComponent } from './pages/showgetuser/showgetuser.component';
+import { GetcompteComponent } from './components/getcompte/getcompte.component';
+import { ShowgetcompteComponent } from './pages/showgetcompte/showgetcompte.component';
+import { AddcompteComponent } from './components/addcompte/addcompte.component';
+import { GetaddcompteComponent } from './pages/getaddcompte/getaddcompte.component';
+import { AdddepotComponent } from './components/adddepot/adddepot.component';
+import { GetadddepotComponent } from './pages/getadddepot/getadddepot.component';
 
 
 
@@ -22,7 +33,18 @@ import { HomeComponent } from './pages/home/home.component';
     FormConnexionComponent,
     GetroleComponent,
     AffichagegetroleComponent,
-    HomeComponent
+    HomeComponent,
+    AdduserComponent,
+    GetadduserComponent,
+    HomecompComponent,
+    GetuserComponent,
+    ShowgetuserComponent,
+    GetcompteComponent,
+    ShowgetcompteComponent,
+    AddcompteComponent,
+    GetaddcompteComponent,
+    AdddepotComponent,
+    GetadddepotComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,33 @@
+
+  <form [formGroup]="formaddcompte">
+    <div class="form-group">
+        <label for="">Montant depot</label>
+        <input type="number" formControlName="montantdepot" class="form-control" placeholder="montantdepot" id="montantdepot">
+      </div>
+      <div class="form-group">
+          <label for="">Ninea</label>
+          <input type="text" formControlName="ninea" class="form-control" placeholder="ninea" id="ninea">
+    </div>
+
+        <div class="form-group">
+            <label for="">Registre Commerce</label>
+            <input type="text" value={{rc}} formControlName="rc" class="form-control" placeholder="rc" id="rc">
+          </div>
+
+          <div class="form-group">
+            <label for="">USERNAME</label>
+            <input required type="text" value={{username}} formControlName="username" class="form-control" id="username">
+          </div>
+
+          <div class="form-group">
+              <label for="">PASSWORD</label>
+              <input required type="password" value={{password}} formControlName="password" class="form-control" id="password">
+          </div>
+
+            <div class="form-group">
+              <label for="">Nom Complet</label>
+              <input required type="text" value={{nomcomplet}} formControlName="nomcomplet" class="form-control" id="nomcomplet">
+            </div>
+
+          <button class="btn btn-success" type="submit" (click)="onAddcompte()">Ajouter</button>
+</form>

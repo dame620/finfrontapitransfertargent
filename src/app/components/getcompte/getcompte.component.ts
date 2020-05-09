@@ -1,42 +1,44 @@
 import { Component, OnInit } from '@angular/core';
-import { RoleService } from '../../services/role.service';
 import { AuthentificationService } from '../../services/authentification.service';
 
 @Component({
-  selector: 'app-getrole',
-  templateUrl: './getrole.component.html',
-  styleUrls: ['./getrole.component.scss']
+  selector: 'app-getcompte',
+  templateUrl: './getcompte.component.html',
+  styleUrls: ['./getcompte.component.scss']
 })
-export class GetroleComponent implements OnInit {
-  roles;
+export class GetcompteComponent implements OnInit {
+  comptes;
   constructor(private auth: AuthentificationService) { }
 
   ngOnInit() {
 
-    this.auth.getRoles().subscribe(
+   this.auth.getCompte().subscribe(
       data=>{
-        this.roles=data["hydra:member"]
+        this.comptes=data["hydra:member"]
         console.log(data["hydra:member"]
         )},
         error=>{
-          alert('Veuillez vous authentifiez');
+        
           console.log(error);
         }
     )
+
 
   }
 
-  ongetRoles(){
-    this.auth.getRoles().subscribe(
+
+  ongetListecompte(){
+    this.auth.getCompte().subscribe(
       data=>{
-        this.roles=data["hydra:member"]
+        this.comptes=data["hydra:member"]
         console.log(data["hydra:member"]
         )},
         error=>{
-          alert('Veuillez vous authentifiez');
+        
           console.log(error);
         }
     )
-}
+      
+  }
 
 }
