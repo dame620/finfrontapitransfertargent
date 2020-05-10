@@ -1,0 +1,33 @@
+<form action [formGroup]="formaddaffectation" >
+ 
+   
+     <div class="form-group">
+         <label for="">DATE DEBUT</label>
+         <input type="date" formControlName="datedebut" class="form-control" placeholder="la date de debut">
+    </div>
+
+    <div class="form-group">
+        <label for="">DATE FIN</label>
+        <input type="date" formControlName="datefin" class="form-control" placeholder="la date de fin">
+       </div>
+
+       <div class="form-group">
+        <label for="">Compte</label>
+        <select class="form-control"  formControlName="compte"> 
+          <option  *ngFor="let compte of comptes" value="/api/comptes/{{ compte.id }}"> {{compte.numerocompte}}</option>
+        </select> 
+
+        </div>
+
+        <div class="form-group">
+            <label for="">USER</label>
+            <select class="form-control"  formControlName="user"> 
+              <option  *ngFor="let user of users" value="/api/users/{{ user.id }}"> {{user.username}}</option>
+            </select> 
+    
+        </div>
+
+
+         <button type="submit" (click)="onAddaffectation()" class="btn btn-primary"> Enregistrer </button> 
+   </form>
+   

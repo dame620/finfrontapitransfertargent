@@ -6,6 +6,8 @@ import { BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Role } from '../models/role';
 import { Compte } from '../models/compte';
+import { Depot } from '../models/depot';
+import { Affectation } from '../models/affectation';
 @Injectable({
   providedIn: 'root'
 })
@@ -70,5 +72,16 @@ pipe(map(user => {
     return this.httpClient.get<Compte>(`${environment.apiUrl}/api/comptes?partenaire.ninea=${ninea}`);
 
   }
+
+
+  postDepot(depot){
+   
+    return this.httpClient.post<Depot>(`${environment.apiUrl}/api/depots`,depot);
+   }
+
+   postAffectation(affectation){
+   
+    return this.httpClient.post<Affectation>(`${environment.apiUrl}/api/affectations`,affectation);
+   }
 
 }

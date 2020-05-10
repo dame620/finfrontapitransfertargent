@@ -7,6 +7,8 @@ import { GetadduserComponent } from './pages/getadduser/getadduser.component';
 import { ShowgetuserComponent } from './pages/showgetuser/showgetuser.component';
 import { ShowgetcompteComponent } from './pages/showgetcompte/showgetcompte.component';
 import { GetaddcompteComponent } from './pages/getaddcompte/getaddcompte.component';
+import { GetadddepotComponent } from './pages/getadddepot/getadddepot.component';
+import { ShowaddaffectationComponent } from './pages/showaddaffectation/showaddaffectation.component';
 
 
 const routes: Routes = [
@@ -15,8 +17,11 @@ const routes: Routes = [
   {path: 'getrole',component:  AffichagegetroleComponent},
   {path: 'adduser',component:  GetadduserComponent},
   {path: 'getuser',component:  ShowgetuserComponent},
-  {path: 'getcompte',component:   ShowgetcompteComponent},
-  {path: 'addcompte',component:    GetaddcompteComponent},
+  {path: 'getcompte',component:  ShowgetcompteComponent},
+  {path: 'addcompte',component:  GetaddcompteComponent},
+  {path: 'adddepot',component:  GetadddepotComponent},
+  {path: 'addaffectation',component:  ShowaddaffectationComponent},
+  
   
  
 ];

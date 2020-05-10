@@ -23,6 +23,8 @@ import { AddcompteComponent } from './components/addcompte/addcompte.component';
 import { GetaddcompteComponent } from './pages/getaddcompte/getaddcompte.component';
 import { AdddepotComponent } from './components/adddepot/adddepot.component';
 import { GetadddepotComponent } from './pages/getadddepot/getadddepot.component';
+import { AddaffectationComponent } from './components/addaffectation/addaffectation.component';
+import { ShowaddaffectationComponent } from './pages/showaddaffectation/showaddaffectation.component';
 
 
 
@@ -44,7 +46,9 @@ import { GetadddepotComponent } from './pages/getadddepot/getadddepot.component'
     AddcompteComponent,
     GetaddcompteComponent,
     AdddepotComponent,
-    GetadddepotComponent
+    GetadddepotComponent,
+    AddaffectationComponent,
+    ShowaddaffectationComponent
   ],
   imports: [
     BrowserModule,
