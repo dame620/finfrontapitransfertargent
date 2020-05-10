@@ -9,6 +9,8 @@ import { ShowgetcompteComponent } from './pages/showgetcompte/showgetcompte.comp
 import { GetaddcompteComponent } from './pages/getaddcompte/getaddcompte.component';
 import { GetadddepotComponent } from './pages/getadddepot/getadddepot.component';
 import { ShowaddaffectationComponent } from './pages/showaddaffectation/showaddaffectation.component';
+import { ShowaddtransactionComponent } from './pages/showaddtransaction/showaddtransaction.component';
+import { ShowaddretraitComponent } from './pages/showaddretrait/showaddretrait.component';
 
 
 const routes: Routes = [
@@ -21,7 +23,8 @@ const routes: Routes = [
   {path: 'addcompte',component:  GetaddcompteComponent},
   {path: 'adddepot',component:  GetadddepotComponent},
   {path: 'addaffectation',component:  ShowaddaffectationComponent},
-  
+  {path: 'addenvoi',component:  ShowaddtransactionComponent},
+  {path: 'addretrait',component:  ShowaddretraitComponent},
   
  
 ];

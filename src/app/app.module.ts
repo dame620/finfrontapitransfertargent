@@ -25,6 +25,10 @@ import { AdddepotComponent } from './components/adddepot/adddepot.component';
 import { GetadddepotComponent } from './pages/getadddepot/getadddepot.component';
 import { AddaffectationComponent } from './components/addaffectation/addaffectation.component';
 import { ShowaddaffectationComponent } from './pages/showaddaffectation/showaddaffectation.component';
+import { AddtransactionComponent } from './components/addtransaction/addtransaction.component';
+import { ShowaddtransactionComponent } from './pages/showaddtransaction/showaddtransaction.component';
+import { AddretraitComponent } from './components/addretrait/addretrait.component';
+import { ShowaddretraitComponent } from './pages/showaddretrait/showaddretrait.component';
 
 
 
@@ -48,7 +52,11 @@ import { ShowaddaffectationComponent } from './pages/showaddaffectation/showadda
     AdddepotComponent,
     GetadddepotComponent,
     AddaffectationComponent,
-    ShowaddaffectationComponent
+    ShowaddaffectationComponent,
+    AddtransactionComponent,
+    ShowaddtransactionComponent,
+    AddretraitComponent,
+    ShowaddretraitComponent
   ],
   imports: [
     BrowserModule,

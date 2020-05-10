@@ -1,0 +1,52 @@
+<form action [formGroup]="formaddretrait" >
+
+
+    <div class="form-group">
+        <label for="">CODE</label>
+        <input type="number" formControlName="code" class="form-control" placeholder="rechercher code">
+    </div>
+
+    <div class="form-group">
+       <label for="">Montant envoi</label>
+       <input type="number" formControlName="montanttransaction" class="form-control" value={{montanttransaction}} placeholder="Montant depot" id="montanttransaction">
+     </div>
+
+
+
+
+     <div class="form-group">
+        <label for="">Nom emetteur</label>
+        <input type="text" formControlName="nomemmeteur" value={{nomemmeteur}} class="form-control" id="nomemmeteur" placeholder="Nom emetteur">
+      </div>
+
+      <div class="form-group">
+        <label for="">Nom destinataire</label>
+        <input type="text" formControlName="nomdestinataire" class="form-control" value={{nomdestinataire}} placeholder="Nom destinataire" id="nomdestinataire">
+      </div>
+
+      <div class="form-group">
+        <label for="">Tel emetteur</label>
+        <input type="number" formControlName="telemetteur" class="form-control" value={{telemetteur}} placeholder="Tel emeteur" id="telemetteur">
+      </div>
+
+
+      <div class="form-group">
+        <label for="">Tel destinataire</label>
+        <input type="number" formControlName="teldestinataire" class="form-control" value={{teldestinataire}} placeholder="Tel destinataire" id="teldestinataire" >
+      </div>
+
+
+      <div class="form-group">
+        <label for="">Cni emetteur</label>
+        <input type="number" formControlName="cniemetteur" class="form-control" value={{cniemetteur}} placeholder="Cni emetteur" id="cniemetteur" >
+      </div>
+
+      <div class="form-group">
+        <label for="">Cni destinataire</label>
+        <input type="number" formControlName="cnidestinataire" class="form-control" placeholder="Cni dest"  >
+    </div> 
+   
+
+         <button type="submit" (click)="onAddretrait()" class="btn btn-primary"> Enregistrer </button> 
+   </form>
+

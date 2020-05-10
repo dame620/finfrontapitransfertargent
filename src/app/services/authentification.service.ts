@@ -8,6 +8,7 @@ import { Role } from '../models/role';
 import { Compte } from '../models/compte';
 import { Depot } from '../models/depot';
 import { Affectation } from '../models/affectation';
+import { Transaction } from '../models/transaction';
 @Injectable({
   providedIn: 'root'
 })
@@ -83,5 +84,21 @@ pipe(map(user => {
    
     return this.httpClient.post<Affectation>(`${environment.apiUrl}/api/affectations`,affectation);
    }
+
+   postEnvoi(envoi){
+   
+    return this.httpClient.post<Transaction>(`${environment.apiUrl}/api/transactions`,envoi);
+   }
+
+
+
+  getCode(code){
+    return this.httpClient.get<Transaction>(`${environment.apiUrl}/api/transactions?code=${code}`);
+  }
+
+   putRetrait(transaction){
+    return this.httpClient.put<Transaction>(`${environment.apiUrl}/api/transactions/${transaction.id}`,transaction);
+  }
+   
 
 }
