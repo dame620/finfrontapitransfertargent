@@ -29,6 +29,8 @@ import { AddtransactionComponent } from './components/addtransaction/addtransact
 import { ShowaddtransactionComponent } from './pages/showaddtransaction/showaddtransaction.component';
 import { AddretraitComponent } from './components/addretrait/addretrait.component';
 import { ShowaddretraitComponent } from './pages/showaddretrait/showaddretrait.component';
+import { ListtransactionComponent } from './components/listtransaction/listtransaction.component';
+import { ShowlisttransactionComponent } from './pages/showlisttransaction/showlisttransaction.component';
 
 
 
@@ -56,7 +58,9 @@ import { ShowaddretraitComponent } from './pages/showaddretrait/showaddretrait.c
     AddtransactionComponent,
     ShowaddtransactionComponent,
     AddretraitComponent,
-    ShowaddretraitComponent
+    ShowaddretraitComponent,
+    ListtransactionComponent,
+    ShowlisttransactionComponent
   ],
   imports: [
     BrowserModule,

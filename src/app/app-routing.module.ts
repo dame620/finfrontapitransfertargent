@@ -1,3 +1,4 @@
+import { ShowlisttransactionComponent } from './pages/showlisttransaction/showlisttransaction.component';
 import { ConnexionComponent } from './pages/connexion/connexion.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -25,6 +26,9 @@ const routes: Routes = [
   {path: 'addaffectation',component:  ShowaddaffectationComponent},
   {path: 'addenvoi',component:  ShowaddtransactionComponent},
   {path: 'addretrait',component:  ShowaddretraitComponent},
+  {path: 'gettransaction',component:  ShowlisttransactionComponent},
+ 
+  
   
  
 ];

@@ -100,5 +100,11 @@ pipe(map(user => {
     return this.httpClient.put<Transaction>(`${environment.apiUrl}/api/transactions/${transaction.id}`,transaction);
   }
    
+  gettransaction(){
+
+    return this.httpClient.get<Transaction>(`${environment.apiUrl}/api/transactions`);
+
+  }
+
 
 }

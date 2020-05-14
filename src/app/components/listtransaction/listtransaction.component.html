@@ -1,0 +1,43 @@
+<button type="button" class="btn btn-success" (click)="ongetListetransaction()">affichage transaction</button>
+<div class="container">
+    <h4>LISTE DES TRANSACTIONS</h4>
+               
+    <table class="table table-dark">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>USERENVOI</th>
+          <th>MONTANT</th>
+          <th>COMPTEENVOI</th>
+          <th>STATU</th>
+          <th>DATE</th>
+          <th>PARTENVOI</th>
+          <th>PARTRETRAIT</th>
+          <th>USERRETRAIT</th>
+         
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let trans of transactions">
+
+            <td>{{trans.id}}</td>
+            <td>{{trans.userenvoi.username}}</td>
+            <td>{{trans.montanttransaction}}</td>
+            <td>{{trans.compteenvoi.numerocompte}}</td>
+            <td>{{trans.statu}}</td>
+            <td>{{trans.datetrans}}</td>
+            <td>{{trans.partenvoyeur}}</td>
+            <td>{{trans.partretrait}}</td>
+          
+            <ng-template [ngIf]="trans.statu == true">
+             <div>
+                <td>{{trans.compteretrait.numerocompte}}</td>
+                <td>{{trans.userretrait.username}}</td>
+             </div>
+           </ng-template>
+        </tr>
+    </tbody>
+    </table>
+  </div>
+
+
