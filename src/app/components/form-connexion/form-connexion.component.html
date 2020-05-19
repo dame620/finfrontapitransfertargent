@@ -1,13 +1,23 @@
-<form action [formGroup]="formConnexion" >
- <div class="form-group">
-    <label for="">Username</label>
-    <input type="text" formControlName="username" class="form-control" placeholder="username">
-  </div>
-
-  <div class="form-group">
-      <label for="">Password</label>
-      <input type="password" formControlName="password" class="form-control" placeholder="password">
-     </div>
-      <button type="submit" (click)="onConnexion()" class="btn btn-primary"> se connecter</button> 
-</form>
-
+<div class="login-container">
+  <form action [formGroup]="formConnexion" class="form-login">
+		<ul class="login-nav">
+			<li class="login-nav__item active">
+				<a href="#">Sign In</a>
+			</li>
+		
+		</ul>
+		<label for="login-input-user" class="login__label">
+			Username
+		</label>
+    <input type="text" formControlName="username" class="form-control" placeholder="username">		<label for="login-input-password" class="login__label">
+			Password
+		</label>
+    <input type="password" formControlName="password" class="form-control" placeholder="password">
+		<label for="login-sign-up" class="login__label--checkbox">
+			<input id="login-sign-up" type="checkbox" class="login__input--checkbox" />
+			Keep me Signed in
+		</label>
+		<button class="login__submit"  type="submit" (click)="onConnexion()" >Sign in</button>
+	</form>
+	<a href="/adduser" class="login__forgot">Forgot Password?</a>
+</div>

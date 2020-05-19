@@ -1,13 +1,23 @@
-<form action [formGroup]="formadduser" >
-    <div class="form-group">
-       <label for="">Username</label>
-       <input type="text" formControlName="username" class="form-control" placeholder="username">
-     </div>
-   
-     <div class="form-group">
-         <label for="">Password</label>
-         <input type="password" formControlName="password" class="form-control" placeholder="password">
+<form action [formGroup]="formadduser" style= "margin-left: 270px;background-color:#999999;">
+  <h4>AJOUTER DES USERS</h4>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+    
+      <div class="form-group">
+        <label for="">Username</label>
+        <input type="text" formControlName="username" class="form-control" placeholder="username">
+      </div>
+
     </div>
+    <div class="form-group col-md-6">
+    
+      <div class="form-group">
+        <label for="">Password</label>
+        <input type="password" formControlName="password" class="form-control" placeholder="password">
+      </div>
+
+    </div>
+  </div>
 
     <div class="form-group">
         <label for="">NomComplet</label>
@@ -22,6 +32,6 @@
 
         </div>
 
-         <button type="submit" (click)="onAdduser()" class="btn btn-primary"> Enregistrer </button> 
+         <button type="submit" (click)="onAdduser()" class="btn btn-success" style= "width: 300px;"> Enregistrer </button> 
    </form>
-   
+  
