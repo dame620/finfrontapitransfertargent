@@ -46,7 +46,7 @@ onAddenvoi(){
   
   this.auth.postEnvoi(envoi).subscribe(
     data=>{
-      alert("ajout reussi avec success");
+      alert("ajout reussi avec success"+ JSON.stringify(data));
       console.log(data);
     },
     //encas d'eereur on peut recuperer l'eereur comme suit

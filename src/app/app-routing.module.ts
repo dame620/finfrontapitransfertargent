@@ -15,7 +15,7 @@ import { ShowaddretraitComponent } from './pages/showaddretrait/showaddretrait.c
 
 
 const routes: Routes = [
-  {path:'login',component:ConnexionComponent},
+  {path:'',component:ConnexionComponent},
   {path: 'home',component: HomeComponent},
   {path: 'getrole',component:  AffichagegetroleComponent},
   {path: 'adduser',component:  GetadduserComponent},

@@ -37,7 +37,7 @@ let user={
 this.auth.getConnexion(user).subscribe(
   data=>{
     console.log(data);
-    this.router.navigate(['home']);
+    this.router.navigate(['/home']);
   },
   //encas d'eereur on peut recuperer l'eereur comme suit
   error=>{

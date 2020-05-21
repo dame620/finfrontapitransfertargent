@@ -106,5 +106,26 @@ pipe(map(user => {
 
   }
 
+  getDate(datetrans){
+    return this.httpClient.get<Transaction>(`${environment.apiUrl}/api/transactions?datetrans[after]=${datetrans}`);
+  }
+
+//deconnection
+  logout(){
+
+    localStorage.removeItem('currentUser');
+    this.currentUserSubject.next(null);
+
+  }
+
+//fonction pour bloquage
+  getStatus(id: number){
+
+    return this.httpClient.get<User>(`${environment.apiUrl}/api/users/status/${id}`);
+
+  }
+
+
+
 
 }

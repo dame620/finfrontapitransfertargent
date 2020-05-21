@@ -1,7 +1,8 @@
 import { JwtInterceptor } from './helpers/jwt-interceptor.service';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 import { NgModule } from '@angular/core';
 
@@ -67,6 +68,8 @@ import { ShowlisttransactionComponent } from './pages/showlisttransaction/showli
     HttpClientModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    FormsModule,
+    Ng2SearchPipeModule,
  
   ],
   providers: [

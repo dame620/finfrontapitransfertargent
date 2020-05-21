@@ -9,35 +9,322 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-    <a class="navbar-brand" href="/login">Login</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown link
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
+  
+   <script>
+    $(".sidebar-dropdown > a").click(function() {
+      $(".sidebar-submenu").slideUp(200);
+      if (
+        $(this)
+          .parent()
+          .hasClass("active")
+      ) {
+        $(".sidebar-dropdown").removeClass("active");
+        $(this)
+          .parent()
+          .removeClass("active");
+      } else {
+        $(".sidebar-dropdown").removeClass("active");
+        $(this)
+          .next(".sidebar-submenu")
+          .slideDown(200);
+        $(this)
+          .parent()
+          .addClass("active");
+      }
+    });
+    
+    $("#close-sidebar").click(function() {
+      $(".page-wrapper").removeClass("toggled");
+    });
+    $("#show-sidebar").click(function() {
+      $(".page-wrapper").addClass("toggled");
+    });
+      </script>
+<div class="page-wrapper chiller-theme toggled">
+  <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
+    <i class="fas fa-bars"></i>
+  </a>
+  <nav id="sidebar" class="sidebar-wrapper">
+    <div class="sidebar-content">
+      <div class="sidebar-brand">
+        <a href="#">pro sidebar</a>
+        <div id="close-sidebar">
+          <i class="fas fa-times"></i>
+        </div>
+      </div>
+      <div class="sidebar-header">
+        <div class="user-pic">
+          <img class="img-responsive img-rounded" src="https://cdn.hintigo.fr/uploads/2019/04/money-transaction_1497001864-425x318.jpg" alt="User picture">
+        </div>
+        <div class="user-info">
+          <span class="user-name">DAME
+            <strong>NDIAYE</strong>
+          </span>
+          <span class="user-role">Administrator</span>
+          <span class="user-status">
+            <i class="fa fa-circle"></i>
+            <span>Online</span>
+          </span>
+        </div>
+      </div>
+      <!-- sidebar-header  -->
+      <div class="sidebar-search">
+        <div>
+          <div class="input-group">
+            <input type="text" class="form-control search-menu" placeholder="Search...">
+            <div class="input-group-append">
+              <span class="input-group-text">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </span>
+            </div>
           </div>
-        </li>
-      </ul>
+        </div>
+      </div>
+      <!-- sidebar-search  -->
+      <div class="sidebar-menu">
+        <ul>
+          <li class="header-menu">
+            <a href="/home">
+              <i class="fa fa-tachometer-alt"></i>
+              <span>HOME</span>
+            </a>
+          </li>
+          <li class="sidebar-dropdown">
+            <a href="/">
+              <i class="fa fa-tachometer-alt"></i>
+              <span>SE CONNECTER</span>
+            </a>
+            <div class="sidebar-submenu">
+
+            </div>
+          </li>
+          <li class="sidebar-dropdown">
+            <a href="/addenvoi">
+              <i class="fa fa-shopping-cart"></i>
+              <span>ENVOYER</span>
+             
+            </a>
+            <div class="sidebar-submenu">
+              <ul>
+             </ul>
+            </div>
+          </li>
+          <li class="sidebar-dropdown">
+            <a href="/addretrait">
+              <i class="far fa-gem"></i>
+              <span>RETIRER</span>
+            </a>
+            <div class="sidebar-submenu">
+              <ul>
+                <li>
+                  <a href="/addcompte">AJOUTCOMPTE </a>
+                </li>
+                
+              </ul>
+            </div>
+          </li>
+          <li class="sidebar-dropdown">
+            <a href="/getcompte">
+              <i class="fa fa-chart-line"></i>
+              <span>LISTECOMPTE</span>
+            </a>
+            <div class="sidebar-submenu">
+              <ul>
+                <li>
+                  <a href="#">Pie chart</a>
+                </li>
+                <li>
+                  <a href="#">Line chart</a>
+                </li>
+                <li>
+                  <a href="#">Bar chart</a>
+                </li>
+                <li>
+                  <a href="#">Histogram</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="sidebar-dropdown">
+            <a href="/getdepot">
+              <i class="fa fa-globe"></i>
+              <span>LISTE DEPOTS</span>
+            </a>
+            <div class="sidebar-submenu">
+              <ul>
+                <li>
+                  <a href="#">Google maps</a>
+                </li>
+                <li>
+                  <a href="#">Open street map</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="/adddepot">
+              <i class="fa fa-book"></i>
+              <span>FAIRE DEPOT</span>
+              <span class="badge badge-pill badge-primary"></span>
+            </a>
+          </li>
+          <li>
+            <a href="/adduser">
+              <i class="fa fa-calendar"></i>
+              <span>AJOUTER USER</span>
+            </a>
+          </li>
+          <li>
+            <a href="/getuser">
+              <i class="fa fa-folder"></i>
+              <span>LISTE USER</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- sidebar-menu  -->
+    </div>
+    <!-- sidebar-content  -->
+    <div class="sidebar-footer">
+      <a href="#">
+        <i class="fa fa-bell"></i>
+        <span class="badge badge-pill badge-warning notification">3</span>
+      </a>
+      <a href="#">
+        <i class="fa fa-envelope"></i>
+        <span class="badge badge-pill badge-success notification">7</span>
+      </a>
+      <a href="#">
+        <i class="fa fa-cog"></i>
+        <span class="badge-sonar"></span>
+      </a>
+      <a href="#">
+        <i class="fa fa-power-off"></i>
+      </a>
     </div>
   </nav>
- 
+  <!-- sidebar-wrapper  -->
+  <main class="page-content">
+    <div class="container-fluid">
+      <h2>SYSTEME DE TRANSFERT D'ARGENT GAGNEYONELMA</h2>
+      <hr>
+      <div class="row">
+        <div class="form-group col-md-6">
+       
+          <a href="/login" target="_blank" class="btn btn-primary btn-sm">SE CONNECTER</a>, 
+          <ul>
+            <li>
+              <a href="/addretrait" target="_blank" class="btn btn-success btn-sm">RETIRER</a>
+            </li>
+            <li>
+              <a href="/gettransaction" target="_blank" class="btn btn-primary btn-sm">LISTE TRANSACTION</a>
+            </li>
+          </ul>  
+        </div>
+
+        <div class="form-group col-md-6">
+       
+          <a target="_blank" (click)="onlogout()" class="btn btn-primary btn-sm">DECONNECTER</a>, 
+          <ul>
+            <li>
+              
+              <a href="/addenvoi" target="_blank" class="btn btn-success btn-sm">ENVOYER</a>
+            </li>
+            <li>
+             
+              <a href="/addaffectation" target="_blank" class="btn btn-primary btn-sm">AFFECTER</a>
+            </li>
+            
+          </ul>  
+        </div>
+       
+        <div class="form-group col-md-2">
+          <div class="alert alert-success" role="alert">
+    
+              <a href="/adduser" target="_blank" class="btn btn-success btn-sm">AJOUTER USER</a>
+
+          </div>
+        </div>
+
+        <div class="form-group col-md-2">
+          <div class="alert alert-success" role="alert">
+    
+              <a href="/getuser" target="_blank" class="btn btn-success btn-sm">LISTE USER</a>
+
+          </div>
+        </div>
+        <div class="form-group col-md-2">
+          <div class="alert alert-success" role="alert">
+    
+              <a href="/adddepot" target="_blank" class="btn btn-success btn-sm"> FAIRE DEPOT </a>
+
+          </div>
+        </div>
+        <div class="form-group col-md-2">
+          <div class="alert alert-success" role="alert">
+    
+              <a href="/getdepot" target="_blank" class="btn btn-success btn-sm"> LISTE DEPOT </a>
+
+          </div>
+        </div>
+        <div class="form-group col-md-2">
+          <div class="alert alert-success" role="alert">
+    
+              <a href="/addcompte" target="_blank" class="btn btn-success btn-sm">AJOUTER COMPTE</a>
+
+          </div>
+        </div>
+        <div class="form-group col-md-2">
+          <div class="alert alert-success" role="alert">
+    
+              <a href="/getcompte" target="_blank" class="btn btn-success btn-sm">LISTE COMPTE </a>
+
+          </div>
+        </div>
+      </div>
+      <h5>SURE ET RAPIDE PARTOUT EN AFRIQUE</h5>
+      <hr>
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+          <div class="card rounded-0 p-0 shadow-sm">
+            <img src="https://www.espritentrepreneur.net/uploads/photo/photo_6014.bbfad92cccf86c7d70cd98f67052ddafd3e2751b.jpg" class="card-img-top rounded-0" alt="Angular pro sidebar">
+            <div class="card-body text-center">
+              <h6 class="card-title"></h6>
+              <a href="/addenvoi" target="_blank" class="btn btn-primary btn-sm">ENVOI</a>
+              <a href="/addretrait" target="_blank" class="btn btn-success btn-sm">RETRAIT</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+          <div class="card rounded-0 p-0 shadow-sm">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRecMRh8QF8hbaGnb4jGADlux9k77JzEDr3R6ZncYvtGLeZIMZf&usqp=CAU" class="card-img-top rounded-0" alt="Angular pro sidebar">
+            <div class="card-body text-center">
+              <h6 class="card-title"></h6>
+              <a href="/adddepot" target="_blank" class="btn btn-primary btn-sm"> AJOUTDEPOT </a>
+              <a href="/gettransaction" target="_blank" class="btn btn-success btn-sm">LISTE TRANS</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+          <div class="card rounded-0 p-0 shadow-sm">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTTUFpiiqd26u425rFJ40FQt1Vnu9A85M2LcOr-SDR-2kMUxI9f&usqp=CAU" class="card-img-top rounded-0" alt="Angular pro sidebar">
+            <div class="card-body text-center">
+              <h6 class="card-title"></h6>
+              <a href="/getcompte" target="_blank" class="btn btn-primary btn-sm" > LISTECOMPTE</a>
+              <a href="/addcompte" target="_blank" class="btn btn-success btn-sm" > AJOUTCOMPTE </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+  <!-- page-content" -->
+</div>
+<!-- page-wrapper -->
+
+  
 </body>
 </html>

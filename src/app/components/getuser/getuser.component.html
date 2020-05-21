@@ -1,7 +1,14 @@
 
-<button type="button" class="btn btn-success" (click)="ongetListeusers()">affichage user</button>
+
+
 <div class="container" style="margin-left: 270px;">
-    <h4>LISTE DES USERS</h4>
+
+    <div class="search" style="margin-left: 500px;">
+      <input class="form-control" type="text" placeholder="Search by Term..." name="search"  [(ngModel)]="rechercheUser"> 
+    </div>
+  <button type="button" class="btn btn-success" (click)="ongetListeusers()">AFFICHAGE LISTE DES USERS</button>
+
+    <h4></h4>
                
     <table class="table table-dark">
       <thead>
@@ -10,15 +17,26 @@
           <th>USERNAME</th>
           <th>NOM</th>
           <th>ROLE</th>
+          <th>STATU</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let user of users">
+        <tr *ngFor="let user of users | filter:rechercheUser">
 
             <td>{{user.id}}</td>
             <td>{{user.username}}</td>
             <td>{{user.nomcomplet}}</td>
             <td>{{user.role.libelle}}</td>
+            <td>
+              <div *ngIf="user.isActive; else elseBlock">
+                <button class="btn btn-success" (click)="onStatus(user.id)">ACTIVE</button>
+
+                </div>
+              <ng-template #elseBlock>
+                <button class="btn btn-danger" (click)="onStatus(user.id)">INACTIVE</button>
+              </ng-template>
+            </td>
+
         </tr>
     </tbody>
     </table>

@@ -8,6 +8,8 @@ import { AuthentificationService } from '../../services/authentification.service
 })
 export class GetuserComponent implements OnInit {
   users;
+ rechercheUser;
+ us;
   constructor(private auth: AuthentificationService) { }
 
   ngOnInit() {
@@ -22,6 +24,11 @@ export class GetuserComponent implements OnInit {
           console.log(error);
         }
     )
+
+  // onStatus();
+
+      
+
 
   }
 
@@ -38,7 +45,27 @@ export class GetuserComponent implements OnInit {
     )
 }
 
+onStatus(id: number){
 
+this.auth.getStatus(id).subscribe(
+  data=>{
+    alert(JSON.stringify(data["message"]));
+    console.log(data);
+    
+    this.auth.getUsers().subscribe(
+      data=>{
+        this.users=data["hydra:member"]
+        console.log(data["hydra:member"]
+        )},
+        error=>{
+          alert('Veuillez vous authentifiez');
+          console.log(error);
+        }
+    )
+  
+  },
+)
+}
 
 
 }
