@@ -56,6 +56,7 @@ onAdduser(){
     //encas d'eereur on peut recuperer l'eereur comme suit
     error=>{
       console.log(error);
+      alert("Echec de l'ajout");
     }
   )
   }

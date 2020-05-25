@@ -42,6 +42,7 @@ this.auth.getConnexion(user).subscribe(
   //encas d'eereur on peut recuperer l'eereur comme suit
   error=>{
     console.log(error);
+    alert("echec de l'authentification");
   }
 )
 }

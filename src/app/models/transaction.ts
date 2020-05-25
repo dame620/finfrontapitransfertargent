@@ -1,7 +1,7 @@
 export interface Transaction {
   id?:number,
   montanttransaction: number;
-  nomemmeteur: string
+  nomemmeteur: string;
   code?: any;
   nomdestinataire: string,
   telemetteur: number;

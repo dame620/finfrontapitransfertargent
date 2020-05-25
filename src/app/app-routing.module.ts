@@ -12,21 +12,22 @@ import { GetadddepotComponent } from './pages/getadddepot/getadddepot.component'
 import { ShowaddaffectationComponent } from './pages/showaddaffectation/showaddaffectation.component';
 import { ShowaddtransactionComponent } from './pages/showaddtransaction/showaddtransaction.component';
 import { ShowaddretraitComponent } from './pages/showaddretrait/showaddretrait.component';
+import { AuthGuard } from './helpers/auth.guard';
 
 
 const routes: Routes = [
   {path:'',component:ConnexionComponent},
-  {path: 'home',component: HomeComponent},
-  {path: 'getrole',component:  AffichagegetroleComponent},
-  {path: 'adduser',component:  GetadduserComponent},
-  {path: 'getuser',component:  ShowgetuserComponent},
-  {path: 'getcompte',component:  ShowgetcompteComponent},
-  {path: 'addcompte',component:  GetaddcompteComponent},
-  {path: 'adddepot',component:  GetadddepotComponent},
-  {path: 'addaffectation',component:  ShowaddaffectationComponent},
-  {path: 'addenvoi',component:  ShowaddtransactionComponent},
-  {path: 'addretrait',component:  ShowaddretraitComponent},
-  {path: 'gettransaction',component:  ShowlisttransactionComponent},
+  {path: 'home',component: HomeComponent, canActivate: [AuthGuard]},
+  {path: 'getrole',component:  AffichagegetroleComponent, canActivate: [AuthGuard]},
+  {path: 'adduser',component:  GetadduserComponent, canActivate: [AuthGuard]},
+  {path: 'getuser',component:  ShowgetuserComponent, canActivate: [AuthGuard]},
+  {path: 'getcompte',component:  ShowgetcompteComponent, canActivate: [AuthGuard]},
+  {path: 'addcompte',component:  GetaddcompteComponent, canActivate: [AuthGuard]},
+  {path: 'adddepot',component:  GetadddepotComponent, canActivate: [AuthGuard]},
+  {path: 'addaffectation',component:  ShowaddaffectationComponent, canActivate: [AuthGuard]},
+  {path: 'addenvoi',component:  ShowaddtransactionComponent, canActivate: [AuthGuard]},
+  {path: 'addretrait',component:  ShowaddretraitComponent, canActivate: [AuthGuard]},
+  {path: 'gettransaction',component:  ShowlisttransactionComponent, canActivate: [AuthGuard]},
  
   
   

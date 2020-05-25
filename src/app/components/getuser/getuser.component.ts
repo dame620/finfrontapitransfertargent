@@ -64,6 +64,11 @@ this.auth.getStatus(id).subscribe(
     )
   
   },
+  error=>{
+    alert("ATTENTION VOUS NE POUVEZ PAS LE BLOQUER");
+    console.log(error);
+  }
+
 )
 }
 

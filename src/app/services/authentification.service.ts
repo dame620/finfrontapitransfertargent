@@ -121,7 +121,7 @@ pipe(map(user => {
 //fonction pour bloquage
   getStatus(id: number){
 
-    return this.httpClient.get<User>(`${environment.apiUrl}/api/users/status/${id}`);
+    return this.httpClient.get<User>(`${environment.apiUrl}/api/users/${id}`);
 
   }
 
