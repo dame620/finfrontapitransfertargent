@@ -46,12 +46,14 @@ onAddenvoi(){
   
   this.auth.postEnvoi(envoi).subscribe(
     data=>{
-      alert("ajout reussi avec success"+ JSON.stringify(data));
+      //alert("ajout reussi avec success"+ JSON.stringify(data));
+      alert(JSON.stringify(data));
       console.log(data);
     },
     //encas d'eereur on peut recuperer l'eereur comme suit
     error=>{
       console.log(error);
+      alert("echec de la transaction");
     }
   )
 

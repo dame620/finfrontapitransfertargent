@@ -121,13 +121,15 @@ export class AddcompteComponent implements OnInit {
 
       this.auth.postCompte(comptesnew).subscribe(
         data=>{
-          alert("ajout reussi avec success");
+          alert(JSON.stringify(data));
+          //alert(JSON.stringify(data["message"])
           console.log(data);
           //localStorage.setItem("token",data.token);
-          this.router.navigate(['getcompte']);
+          this.router.navigate(['home']);
         },
         //encas d'eereur on peut recuperer l'eereur comme suit
         error=>{
+          alert("echec de la creation du compte");
           console.log(error);
         }
       )

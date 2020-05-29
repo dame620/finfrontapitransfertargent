@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { AuthentificationService } from '../../services/authentification.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-addaffectation',
@@ -12,7 +13,7 @@ export class AddaffectationComponent implements OnInit {
   formaddaffectation:FormGroup;
   comptes: any;
   users: any;
-  constructor (private auth: AuthentificationService) { }
+  constructor (private auth: AuthentificationService, private router: Router) { }
 
   ngOnInit(){
     
@@ -61,6 +62,7 @@ onAddaffectation(){
     data=>{
       alert("ajout reussi avec success");
       console.log(data);
+      this.router.navigate(['home']);
     },
     //encas d'eereur on peut recuperer l'eereur comme suit
     error=>{

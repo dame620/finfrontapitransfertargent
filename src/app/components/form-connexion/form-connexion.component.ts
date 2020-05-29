@@ -2,6 +2,7 @@ import { AuthentificationService } from './../../services/authentification.servi
 import { FormGroup, FormControl } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { User } from '../../models/user';
 
 
 @Component({
@@ -11,16 +12,17 @@ import { Router } from '@angular/router';
 })
 export class FormConnexionComponent implements OnInit {
 
-
+ 
   formConnexion:FormGroup;
   constructor(private auth: AuthentificationService, private router:Router) { }
 
   ngOnInit(){
-    
+
     this.formConnexion = new FormGroup({
       username: new FormControl(''),
       password: new FormControl(''),
   });
+
 }
 onConnexion(){
   

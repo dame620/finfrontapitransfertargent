@@ -19,6 +19,7 @@
     "@angular/platform-browser": "~9.0.2",
     "@angular/platform-browser-dynamic": "~9.0.2",
     "@angular/router": "~9.0.2",
+    "jwt-decode": "^2.2.0",
     "ng2-search-filter": "^0.5.1",
     "npm-check-updates": "^4.1.2",
     "rxjs": "~6.5.4",
@@ -46,5 +47,4 @@
     "tslint": "~5.18.0",
     "typescript": "~3.7.5"
   }
-  
 }

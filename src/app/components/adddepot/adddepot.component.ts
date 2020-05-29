@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { AuthentificationService } from '../../services/authentification.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-adddepot',
@@ -11,7 +12,7 @@ export class AdddepotComponent implements OnInit {
 
   formadddepot:FormGroup;
   comptes: any;
-  constructor (private auth: AuthentificationService) { }
+  constructor (private auth: AuthentificationService, private router:Router) { }
 
   ngOnInit(){
     
@@ -44,12 +45,14 @@ onAdddepot(){
   
   this.auth.postDepot(depot).subscribe(
     data=>{
-      alert("ajout reussi avec success");
+      alert("depot reussi avec succes");
       console.log(data);
+      this.router.navigate(['home']);
     },
     //encas d'eereur on peut recuperer l'eereur comme suit
     error=>{
       console.log(error);
+      alert("echec du depot");
     }
   )
 

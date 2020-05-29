@@ -58,7 +58,7 @@
         </div>
         <div class="user-info">
           <span class="user-name">DAME
-            <strong>NDIAYE</strong>
+            <strong>Ndiaye</strong>
           </span>
           <span class="user-role">Administrator</span>
           <span class="user-status">
@@ -117,14 +117,14 @@
             <div class="sidebar-submenu">
               <ul>
                 <li>
-                  <a href="/addcompte">AJOUTCOMPTE </a>
+                  <a href="/addcompte" *ngIf="isAdminSysorAdm()">AJOUTCOMPTE </a>
                 </li>
                 
               </ul>
             </div>
           </li>
           <li class="sidebar-dropdown">
-            <a href="/getcompte">
+            <a href="/getcompte" *ngIf="isAdminSysorAdm()">
               <i class="fa fa-chart-line"></i>
               <span>LISTECOMPTE</span>
             </a>
@@ -146,7 +146,7 @@
             </div>
           </li>
           <li class="sidebar-dropdown">
-            <a href="/getdepot">
+            <a href="/getdepot" *ngIf="isUsersys()">
               <i class="fa fa-globe"></i>
               <span>LISTE DEPOTS</span>
             </a>
@@ -162,20 +162,20 @@
             </div>
           </li>
           <li>
-            <a href="/adddepot">
+            <a href="/adddepot" *ngIf="isUsersys()">
               <i class="fa fa-book"></i>
               <span>FAIRE DEPOT</span>
               <span class="badge badge-pill badge-primary"></span>
             </a>
           </li>
           <li>
-            <a href="/adduser">
+            <a href="/adduser" *ngIf="isForAdduser()">
               <i class="fa fa-calendar"></i>
               <span>AJOUTER USER</span>
             </a>
           </li>
           <li>
-            <a href="/getuser">
+            <a href="/getuser" *ngIf="isForAdduser()">
               <i class="fa fa-folder"></i>
               <span>LISTE USER</span>
             </a>
@@ -214,10 +214,10 @@
           <a href="/login" target="_blank" class="btn btn-primary btn-sm">SE CONNECTER</a>, 
           <ul>
             <li>
-              <a href="/addretrait" target="_blank" class="btn btn-success btn-sm">RETIRER</a>
+              <a href="/addretrait" target="_blank" class="btn btn-success btn-sm" >RETIRER</a>
             </li>
             <li>
-              <a href="/gettransaction" target="_blank" class="btn btn-primary btn-sm">LISTE TRANSACTION</a>
+              <a href="/gettransaction" target="_blank" class="btn btn-primary btn-sm" *ngIf="isAdminSysorAdm()">LISTE TRANSACTION</a>
             </li>
           </ul>  
         </div>
@@ -232,7 +232,7 @@
             </li>
             <li>
              
-              <a href="/addaffectation" target="_blank" class="btn btn-primary btn-sm">AFFECTER</a>
+              <a href="/addaffectation" target="_blank" class="btn btn-primary btn-sm" *ngIf="isForAdduser()">AFFECTER</a>
             </li>
             
           </ul>  
@@ -241,7 +241,7 @@
         <div class="form-group col-md-2">
           <div class="alert alert-success" role="alert">
     
-              <a href="/adduser" target="_blank" class="btn btn-success btn-sm">AJOUTER USER</a>
+              <a href="/adduser" target="_blank" class="btn btn-success btn-sm" *ngIf="isForAdduser()">AJOUTER USER</a>
 
           </div>
         </div>
@@ -249,35 +249,35 @@
         <div class="form-group col-md-2">
           <div class="alert alert-success" role="alert">
     
-              <a href="/getuser" target="_blank" class="btn btn-success btn-sm">LISTE USER</a>
+              <a href="/getuser" target="_blank" class="btn btn-success btn-sm" *ngIf="isForAdduser()">LISTE USER</a>
 
           </div>
         </div>
         <div class="form-group col-md-2">
           <div class="alert alert-success" role="alert">
     
-              <a href="/adddepot" target="_blank" class="btn btn-success btn-sm"> FAIRE DEPOT </a>
+              <a href="/adddepot" target="_blank" class="btn btn-success btn-sm" *ngIf="isUsersys()"> FAIRE DEPOT </a>
 
           </div>
         </div>
         <div class="form-group col-md-2">
           <div class="alert alert-success" role="alert">
     
-              <a href="/getdepot" target="_blank" class="btn btn-success btn-sm"> LISTE DEPOT </a>
+              <a href="/getdepot" target="_blank" class="btn btn-success btn-sm" *ngIf="isUsersys()"> LISTE DEPOT </a>
 
           </div>
         </div>
         <div class="form-group col-md-2">
           <div class="alert alert-success" role="alert">
     
-              <a href="/addcompte" target="_blank" class="btn btn-success btn-sm">AJOUTER COMPTE</a>
+              <a href="/addcompte" target="_blank" class="btn btn-success btn-sm" *ngIf="isAdminSysorAdm()">AJOUTER COMPTE</a>
 
           </div>
         </div>
         <div class="form-group col-md-2">
           <div class="alert alert-success" role="alert">
     
-              <a href="/getcompte" target="_blank" class="btn btn-success btn-sm">LISTE COMPTE </a>
+              <a href="/getcompte" target="_blank" class="btn btn-success btn-sm" *ngIf="isAdminSysorAdm()">LISTE COMPTE </a>
 
           </div>
         </div>
@@ -301,8 +301,8 @@
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRecMRh8QF8hbaGnb4jGADlux9k77JzEDr3R6ZncYvtGLeZIMZf&usqp=CAU" class="card-img-top rounded-0" alt="Angular pro sidebar">
             <div class="card-body text-center">
               <h6 class="card-title"></h6>
-              <a href="/adddepot" target="_blank" class="btn btn-primary btn-sm"> AJOUTDEPOT </a>
-              <a href="/gettransaction" target="_blank" class="btn btn-success btn-sm">LISTE TRANS</a>
+              <a href="/adddepot" target="_blank" class="btn btn-primary btn-sm" *ngIf="isUsersys()"> AJOUTDEPOT </a>
+              <a href="/gettransaction" target="_blank" class="btn btn-success btn-sm" *ngIf="isAdminSysorAdm()">LISTE TRANS</a>
             </div>
           </div>
         </div>
@@ -312,8 +312,8 @@
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTTUFpiiqd26u425rFJ40FQt1Vnu9A85M2LcOr-SDR-2kMUxI9f&usqp=CAU" class="card-img-top rounded-0" alt="Angular pro sidebar">
             <div class="card-body text-center">
               <h6 class="card-title"></h6>
-              <a href="/getcompte" target="_blank" class="btn btn-primary btn-sm" > LISTECOMPTE</a>
-              <a href="/addcompte" target="_blank" class="btn btn-success btn-sm" > AJOUTCOMPTE </a>
+              <a href="/getcompte" target="_blank" class="btn btn-primary btn-sm"  *ngIf="isForAdduser()"> LISTECOMPTE</a>
+              <a href="/addcompte" target="_blank" class="btn btn-success btn-sm" *ngIf="isAdminSysorAdm()"> AJOUTCOMPTE </a>
             </div>
           </div>
         </div>

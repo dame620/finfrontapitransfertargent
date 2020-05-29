@@ -1,3 +1,4 @@
+import * as jwt_decode from 'jwt-decode';
 import { environment } from './../../environments/environment';
 import { User } from './../models/user';
 import { Injectable } from '@angular/core';
@@ -9,6 +10,8 @@ import { Compte } from '../models/compte';
 import { Depot } from '../models/depot';
 import { Affectation } from '../models/affectation';
 import { Transaction } from '../models/transaction';
+//import { jwt_decode } from 'jwt_decode';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -28,6 +31,18 @@ export class AuthentificationService {
 
 return this.httpClient.post<User>(`${environment.apiUrl}/login_check`,user).
 pipe(map(user => {
+  console.log(user);
+  //decode
+  const decoded = jwt_decode(user.token);
+  console.log(decoded);
+  //
+  localStorage.setItem("token",user.token);
+  //
+  localStorage.setItem('user', JSON.stringify(user));
+  //recuperation du role
+  localStorage.setItem('roles', JSON.stringify(decoded.roles));
+  //
+  console.log(localStorage.getItem("roles"))
   // store user details and jwt token in local storage to keep user logged in between page refreshes
   localStorage.setItem('currentUser', JSON.stringify(user));
   this.currentUserSubject.next(user);
